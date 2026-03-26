@@ -11,8 +11,19 @@ st.title("Prediksi Dropout Mahasiswa")
 st.write("Masukkan data mahasiswa:")
 
 age = st.number_input("Age at Enrollment", 15, 70, 20)
-debtor = st.selectbox("Debtor", [0,1])
-tuition = st.selectbox("Tuition Fees Up to Date", [0,1])
+
+debtor_label = st.selectbox(
+    "Status Hutang",
+    ["Tidak Punya Hutang", "Punya Hutang"]
+)
+debtor = 0 if debtor_label == "Tidak Punya Hutang" else 1
+tuition_label = st.selectbox(
+    "Status Pembayaran UKT",
+    ["Belum Lunas", "Lunas"]
+)
+
+# konversi ke angka (biar model tetap jalan)
+tuition = 0 if tuition_label == "Belum Lunas" else 1
 grade1 = st.number_input("Nilai Semester 1", 0.0, 20.0, 10.0)
 grade2 = st.number_input("Nilai Semester 2", 0.0, 20.0, 10.0)
 

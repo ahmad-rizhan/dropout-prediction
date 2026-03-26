@@ -6,6 +6,8 @@ import joblib
 # Load model
 model = joblib.load('model.joblib')
 
+st.write(model.feature_names_in_)
+
 st.title("Prediksi Dropout Mahasiswa")
 
 st.write("Masukkan data mahasiswa:")

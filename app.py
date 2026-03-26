@@ -41,9 +41,9 @@ if st.button("Predict"):
     ]
 )
 
-    prediction = model.predict(input_data)
+prediction = model.predict(input_data)
 
-    if prediction[0] == 1:
-        st.success("Mahasiswa berpotensi LULUS")
-    else:
-        st.error("Mahasiswa berpotensi DROPOUT")
+if prediction[0] == 1:
+    st.error("Mahasiswa berpotensi DROPOUT")
+else:
+    st.success("Mahasiswa berpotensi LULUS")

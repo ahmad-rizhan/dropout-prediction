@@ -18,12 +18,12 @@ grade2 = st.number_input("Nilai Semester 2", 0.0, 20.0, 10.0)
 
 if st.button("Predict"):
     input_data = pd.DataFrame({
-        'Age_at_enrollment': [age],
-        'Debtor': [debtor],
-        'Tuition_fees_up_to_date': [tuition],
-        'Curricular_units_1st_sem_grade': [grade1],
-        'Curricular_units_2nd_sem_grade': [grade2]
-    })
+    'Age at enrollment': [age],
+    'Debtor': [debtor],
+    'Tuition fees up to date': [tuition],
+    'Curricular units 1st sem (grade)': [grade1],
+    'Curricular units 2nd sem (grade)': [grade2]
+})
 
     prediction = model.predict(input_data)
 

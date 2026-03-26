@@ -10,6 +10,8 @@ st.title("Prediksi Dropout Mahasiswa")
 
 st.write("Masukkan data mahasiswa:")
 
+st.write(model.n_features_in_)
+
 age = st.number_input("Age at Enrollment", 15, 70, 20)
 
 debtor_label = st.selectbox(

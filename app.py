@@ -6,8 +6,6 @@ import joblib
 # Load model
 model = joblib.load('model.joblib')
 
-st.write(model.feature_names_in_)
-
 st.title("Prediksi Dropout Mahasiswa")
 
 st.write("Masukkan data mahasiswa:")
@@ -19,13 +17,16 @@ grade1 = st.number_input("Nilai Semester 1", 0.0, 20.0, 10.0)
 grade2 = st.number_input("Nilai Semester 2", 0.0, 20.0, 10.0)
 
 if st.button("Predict"):
-    input_data = pd.DataFrame({
-        'Age_at_enrollment': [age],
-        'Debtor': [debtor],
-        'Tuition_fees_up_to_date': [tuition],
-        'Curricular_units_1st_sem_grade': [grade1],
-        'Curricular_units_2nd_sem_grade': [grade2]
-    })
+    input_data = pd.DataFrame(
+    [[age, debtor, tuition, grade1, grade2]],
+    columns=[
+        'Age_at_enrollment',
+        'Debtor',
+        'Tuition_fees_up_to_date',
+        'Curricular_units_1st_sem_grade',
+        'Curricular_units_2nd_sem_grade'
+    ]
+)
 
     prediction = model.predict(input_data)
 

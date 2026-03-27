@@ -3,7 +3,6 @@
 
 ## Business Understanding
 Jaya Jaya Institute merupakan institusi pendidikan yang menghadapi permasalahan dalam pengelolaan mahasiswa, khususnya tingginya tingkat mahasiswa yang tidak menyelesaikan studi (dropout).
-
 Hal ini berdampak pada kualitas pendidikan, reputasi institusi, serta efisiensi operasional. Oleh karena itu, diperlukan analisis berbasis data untuk mengidentifikasi faktor-faktor yang mempengaruhi dropout mahasiswa.
 
 ### Permasalahan Bisnis
@@ -46,6 +45,14 @@ Jalankan file berikut untuk melakukan prediksi:
 
 python app.py
 
+---
+
+## Deployment
+Aplikasi prediksi dropout mahasiswa telah di-deploy menggunakan Streamlit Cloud dan dapat diakses melalui:
+🔗 https://dropout-prediction-rizhan.streamlit.app
+
+---
+
 ## Business Dashboard
 Dashboard dibuat menggunakan Looker Studio untuk memvisualisasikan faktor-faktor yang mempengaruhi dropout mahasiswa.
 
@@ -65,11 +72,30 @@ Dashboard ini membantu institusi dalam:
 Link Dashboard:
 https://lookerstudio.google.com/reporting/e8cfa546-1cb8-44c7-adca-387ee672d9e1
 
+---
+
 ## Conclusion
+
 Model machine learning telah berhasil dibangun untuk memprediksi kemungkinan mahasiswa mengalami dropout.
 
 ### Performa Model
-Model Random Forest menunjukkan performa yang cukup baik dalam mengklasifikasikan mahasiswa dropout dan graduate berdasarkan data yang tersedia.
+Model Random Forest dibangun menggunakan fitur yang telah dipilih berdasarkan relevansi, yaitu mencakup aspek akademik, finansial, dan demografis mahasiswa.
+
+Model dilatih menggunakan data yang telah difilter (hanya status Dropout dan Graduate) dan menunjukkan performa yang baik dalam mengklasifikasikan kedua kategori tersebut.
+
+Penggunaan fitur yang lebih representatif dibandingkan sebelumnya memungkinkan model menangkap pola yang lebih kompleks dan meningkatkan kualitas prediksi.
+
+### Fitur yang Digunakan
+Fitur yang digunakan dalam model ini meliputi:
+- Age at Enrollment  
+- Debtor  
+- Tuition Fees Up To Date  
+- Scholarship Holder  
+- Gender  
+- Admission Grade  
+- Nilai dan jumlah mata kuliah lulus pada semester 1 dan 2  
+
+Pemilihan fitur ini dilakukan untuk menjaga keseimbangan antara performa model dan kemudahan implementasi pada aplikasi Streamlit.
 
 ### Insight Utama
 - Mahasiswa dengan nilai akademik rendah memiliki risiko dropout lebih tinggi
@@ -85,4 +111,4 @@ Model Random Forest menunjukkan performa yang cukup baik dalam mengklasifikasika
 - Menerapkan sistem early warning berbasis data
 - Melakukan evaluasi berkala terhadap performa mahasiswa
 - Fokus intervensi pada semester awal
-  
+
